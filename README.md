@@ -57,8 +57,6 @@ and if the creator uses a password it'll be required.
   * **db.name.find().limit(number)** - It'll limit the amount of documents shown at a time for the matching of the find.
   * **db.potions.find().skip(number).limit(number)** - The skip() will skip the number passed of documents.
   
-  
-  
 * **Update**:
   * **db.name.update({"data1": "value"}, {"$set": {"data": "value"}})** - To update a data from the document we fisrt pass trough the brackets any data from the document we want to update so that when it matches the result it change it; the second pair of brackets uses "$set" which is the parameter to update and inside those brackets we use another pair {} with the data we want to change and the updated value of that data.
   * **db.name.update({"data1": "value"}, {"$set": {"data": "value"}}, {"multi": true})** - Here we added the "multi" parameter when it's *flase* it will only update the **first** document that matches, on the hand, *true* will update **all** the document that matches.
@@ -73,7 +71,9 @@ and if the creator uses a password it'll be required.
   * **db.name.update({"data1": "value"}, {"$addToSet": {"arrayName": 1}}** - The $addToSet operator will add a value to the end of an array unless it is already present.
   * **db.name.update({"data1": "value"}, {"$pull": {"arrayName": 1}}** - The $pull operator will remove any instance of a value from an array (If value isn’t unique, then all instances will be removed from the array.)
   
-
+* **Aggregate**:
+  * **db.name.aggregate({"$group": {"$-id": $value})** - Aggregate is used ti combine data, we use $group as parameter and uses the filed id as the new characristics and the value as the new id.
+  * **db.name.aggregate({"$group": {"$-id": $value, "total": {"sum": 1}}})** - Anything specified after the group key is considered an accumulator. Accumulators take a single expression and compute the expression for grouped documents. In this case if there is a document with the same value we just passed the sum will add one.
 
 ## Data types 
 
