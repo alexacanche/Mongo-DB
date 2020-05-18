@@ -100,4 +100,4 @@ and if the creator uses a password it'll be required.
 
 ## Acknowledgments
 
-* This is a version used from "The Magical Marverls of MongoDB"
+* This is a version based on "The Magical Marverls of MongoDB" document.
