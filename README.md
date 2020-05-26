@@ -66,10 +66,10 @@ and if the creator uses a password it'll be required.
   * **db.name.update({"data1": "value"}, {"$set": {"data.2": "value"}})** - To update a value that it's inside a list that it's also a vlue from a data we use the position of the value we want to update in the list, in this example it would be the value numbers 3 (since we start counting from 0). 
   * **db.name.update({"data": "newValue"}, {"$set": {"data.$": "valueToChange"}}, {"multi": true})** - In case we don't know the position of the value we want to change, it's necessary that the data to match it with is the data we want to change and the new value to change and in the next brackets tha data and the sign "$" instead of the position number with the value to change. 
   * **db.name.update({"data1": "value"}, {"$set": {"data.embeddedValue": "value"}}, {"multi": true})** - To update a value that inside a object which is also a data we use the dot with the name of the data to have access to it and change its value.
-  * **db.name.update({"data1": "value"}, {"$pop": {"arrayName": 1}}** - The $pop operator will remove either the first or last value of an array. With 1 removes the last element and with -1 the first. This operator will only accept 1 or -1.
-  * **db.name.update({"data1": "value"}, {"$push": {"arrayName": "newValue"}}** - The $push operator will add a new value a the end of the especified array.
-  * **db.name.update({"data1": "value"}, {"$addToSet": {"arrayName": 1}}** - The $addToSet operator will add a value to the end of an array unless it is already present.
-  * **db.name.update({"data1": "value"}, {"$pull": {"arrayName": 1}}** - The $pull operator will remove any instance of a value from an array (If value isn’t unique, then all instances will be removed from the array.)
+  * **db.name.update({"data1": "value"}, {"$pop": {"arrayName": 1}})** - The $pop operator will remove either the first or last value of an array. With 1 removes the last element and with -1 the first. This operator will only accept 1 or -1.
+  * **db.name.update({"data1": "value"}, {"$push": {"arrayName": "newValue"}})** - The $push operator will add a new value a the end of the especified array.
+  * **db.name.update({"data1": "value"}, {"$addToSet": {"arrayName": 1}})** - The $addToSet operator will add a value to the end of an array unless it is already present.
+  * **db.name.update({"data1": "value"}, {"$pull": {"arrayName": 1}})** - The $pull operator will remove any instance of a value from an array (If value isn’t unique, then all instances will be removed from the array.)
   
 * **Aggregate**:
   * **db.name.aggregate({"$group": {"$-id": $value})** - Aggregate is used ti combine data, we use $group as parameter and uses the filed id as the new characristics and the value as the new id.
