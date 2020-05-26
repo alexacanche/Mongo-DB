@@ -72,8 +72,13 @@ and if the creator uses a password it'll be required.
   * **db.name.update({"data1": "value"}, {"$pull": {"arrayName": 1}})** - The $pull operator will remove any instance of a value from an array (If value isn’t unique, then all instances will be removed from the array.)
   
 * **Aggregate**:
-  * **db.name.aggregate({"$group": {"$-id": $value})** - Aggregate is used ti combine data, we use $group as parameter and uses the filed id as the new characristics and the value as the new id.
-  * **db.name.aggregate({"$group": {"$-id": $value, "total": {"sum": 1}}})** - Anything specified after the group key is considered an accumulator. Accumulators take a single expression and compute the expression for grouped documents. In this case if there is a document with the same value we just passed the sum will add one.
+  * **db.name.aggregate([{"$group": {"$-id": "$value"}])** - Aggregate is used ti combine data, we use $group as parameter and uses the filed id as the new characristics and the value as the new id.
+  * **db.name.aggregate([{"$group": {"$-id": "$value", "total": {"sum": 1}}}])** - Anything specified after the group key is considered an accumulator. Accumulators take a single expression and compute the expression for grouped documents. In this case if there is a document with the same value we just passed the sum will add one.
+ * **db.name.aggregate([{"$group": {"$-id": "$value", "total": {"sum": 1}, "total_data": {"$avg": "$data"}}}])** - You can add as many opperations as you want ($sum, $avg, $max, $min).
+  * **db.name.aggregate([{"$match": {"data": "value"}}, {"$group": {"$-id": "$value", "total": {"sum": 1}}}])** - The aggregate method acts like a pipeline, where we can pass data through many stages in order to change it along the way. Each stage modifies the working data set and then passes the altered documents to the next stage until we get our desired result. (collection, filter and group).
+ 
+  
+  
 
 ## Data types 
 
