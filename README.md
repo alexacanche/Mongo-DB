@@ -38,11 +38,9 @@ and if the creator uses a password it'll be required.
   * **use NameOfTheDatabase** - Access to the desired database.
   * **db.createCollection("name")** - Create a collection inside the already selected database.
   
-* **Insert**
+* **Insert/Remove**
   * **db.name.insert({"data1": "value"})** - Insert a *document* inside the already created collection, if the colleciton was not previously created it will automatically do it. 
   * **db.name.insert({"data1": "value", "birthDate": new Date(1999,8,23)** - new Date(), it's from the syntax of JavaScript (Year, month(the count of months starts at 0), day). In this case, this date means: September 23rd, 1999.
-  
-* **Remove**
   * **db.name.remove({"data1": "value"})** - Erase the complete *document* if the key passed ("data1": "value") is matched.
   
 * **Find**
