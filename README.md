@@ -48,14 +48,14 @@ and if the creator uses a password it'll be required.
 * **Find**
   * **db.name.find()** - Shows all the *documents* in that collection.
   * **db.name.find().pretty()** - Shows all the *documents* in that collection in json form.
-  * **db.name.find({"data": "value"})** - In the database, collection will find all the documents that matches what is inside the brackes. You can pass differents queries.
-  * **db.name.find({"data": {"$gt": 20}})** - As the previous command, this will do the same but with the difference of intead putting the excat value we want to find we can use comparison query operators (listed below). In this example the $gt operator means "greater than" so we are looking for that data we specified that is greater than 20. 
-  * **db.name.find({"data": {$elemMatch: {"$gt": 20, "$lt": 50}}})** - Adding the $elemMatch would make sure that AT LEAST ONE character of the array will match the range of greater than 20 and less than 50.
-  * **db.name.find({"data": {"$gt": 20}}, {"name": true, "anotherName": true})** - This command is the same but the extra bracket we select which elements of the document we want to be shown, the only restriction is you must only put the ones your want with "true" o the ones you don't with "false", you cannot mix them.
+  * **db.name.find({"data": "value"}).pretty()** - In the database, collection will find all the documents that matches what is inside the brackes. You can pass differents queries.
+  * **db.name.find({"data": {"$gt": 20}}).pretty()** - As the previous command, this will do the same but with the difference of intead putting the excat value we want to find we can use comparison query operators (listed below). In this example the $gt operator means "greater than" so we are looking for that data we specified that is greater than 20. 
+  * **db.name.find({"data": {$elemMatch: {"$gt": 20, "$lt": 50}}}).pretty()** - Adding the $elemMatch would make sure that AT LEAST ONE character of the array will match the range of greater than 20 and less than 50.
+  * **db.name.find({"data": {"$gt": 20}}, {"name": true, "anotherName": true}).pretty()** - This command is the same but the extra bracket we select which elements of the document we want to be shown, the only restriction is you must only put the ones your want with "true" o the ones you don't with "false", you cannot mix them.
   * **db.name.find().count()** - The count as its name says, count the number of (in this case) matching documents (if something passed trough find), since nothing is passed in find it'll return the total amount of documents in the collection.
-  * **db.name.find().sort({"data": 1})** - The sort() cursor method to sort documents based of the "data" based. In here you can only put 1 for ascending order and -1 for descending. 
-  * **db.name.find().limit(number)** - It'll limit the amount of documents shown at a time for the matching of the find.
-  * **db.potions.find().skip(number).limit(number)** - The skip() will skip the number passed of documents.
+  * **db.name.find().sort({"data": 1}).pretty()** - The sort() cursor method to sort documents based of the "data" based. In here you can only put 1 for ascending order and -1 for descending. 
+  * **db.name.find().limit(number).pretty()** - It'll limit the amount of documents shown at a time for the matching of the find.
+  * **db.name.find().skip(number).limit(number).pretty()** - The skip() will skip the number passed of documents.
   
 * **Update**:
   * **db.name.update({"data1": "value"}, {"$set": {"data": "value"}})** - To update a data from the document we fisrt pass trough the brackets any data from the document we want to update so that when it matches the result it change it; the second pair of brackets uses "$set" which is the parameter to update and inside those brackets we use another pair {} with the data we want to change and the updated value of that data.
